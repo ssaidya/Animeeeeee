@@ -1,0 +1,465 @@
+@import "font.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: white;
+  text-wrap: balance;
+}
+html, 
+body{
+  scroll-behavior: smooth;
+}
+
+body.active {
+  overflow: hidden;
+}
+img {
+  vertical-align: middle;
+}
+a,
+span {
+  display: inline-block;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+input {
+  outline: none;
+  border: none;
+}
+.container {
+  max-width: 1840px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.headeer {
+  position: relative;
+}
+.header_bg {
+  width: 100%;
+}
+.nav_bg.active {
+  display: block;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 0.7) 35.462%,
+    rgba(11, 11, 11, 0.35) 127.269%,
+    rgba(11, 11, 11, 0) 133.23%
+  );
+  display: flex;
+  align-items: center;
+}
+.nav_bg{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 15, 15, 0.836);
+  z-index: 9;
+  display: none;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 0.7) 35.462%,
+    rgba(11, 11, 11, 0.35) 127.269%,
+    rgba(11, 11, 11, 0) 133.23%
+  );
+  padding: 20px 0 25px;
+  z-index: 9999;
+}
+.nav_left {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+.nav_link {
+  font: 600 clamp(16px, 3vw, 20px) Inter;
+
+  &::first-letter {
+    color: rgb(38, 0, 255);
+  }
+}
+.user::before {
+  content: "\f007";
+  font-style: normal;
+  font-size: 20px;
+}
+.nav_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.nav_input {
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 100px;
+  background: transparent;
+  width: 438px;
+  padding: 10px 100px;
+  &::placeholder {
+    color: white;
+    font: 500 clamp(11px, 2vw, 20px) Inter;
+    text-align: center;
+  }
+}
+.nav_btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  background: transparent;
+  display: none;
+}
+.nav_span,
+.nav_span::before,
+.nav_span::after {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #a235d18a;
+  top: 50%;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav_span::before,
+.nav_span::after {
+  content: "";
+  display: block;
+  transition: 0.5s;
+}
+.nav_span::before {
+  top: -8px;
+}
+.nav_span::after {
+  top: 8px;
+}
+.nav_btn.active .nav_span {
+  background: transparent;
+}
+
+.nav_btn.active .nav_span::before {
+  background: white;
+  transform: rotate(45deg) translate(6px, 5px);
+}
+
+.nav_btn.active .nav_span::after {
+  background: white;
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+.nav_btn {
+  z-index: 12;
+}
+.bg_span {
+  font: 500 clamp(13px, 3vw, 15px) / 156.4% Montserrat;
+}
+.bg_title {
+  font: 600 clamp(20px, 5vw, 75px) / 91px Montserrat;
+  max-width: 874px;
+  margin: 10px 0 38px;
+}
+.bg_block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bg_quality {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.bg_block-span {
+  font: 700 clamp(16px, 2vw, 20px) / 24px Montserrat;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 5px;
+  transition: 0.5s;
+
+  &:hover {
+    color: rgb(6, 6, 6);
+    border: 2px solid rgb(189, 93, 5);
+    border-radius: 5px;
+    background: rgb(189, 93, 5);
+  }
+}
+.bg_block-episode {
+  font: 600 clamp(16px, 2vw, 20px) / 24px Montserrat;
+}
+.bg_block-circle {
+  width: 10px;
+  height: 10px;
+  background: rgb(52, 51, 51);
+  border-radius: 50%;
+}
+.bg_text {
+  color: rgb(208, 208, 208);
+  font: 600 clamp(15px, 2vw, 18px) / 156.4% Montserrat;
+  max-width: 530px;
+  margin: 50px 0 80px;
+}
+.bg_btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.bg_btn {
+  font: 600 clamp(15px, 2vw, 20px) / 156.4% Montserrat;
+  padding: 15px 20px;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 3px solid transparent;
+  border-radius: 100px;
+  &:hover {
+    border: 3px solid #33addf;
+  }
+}
+.anime {
+  background: url(../images/anime_bg.png) no-repeat center / cover;
+  padding: 120px 0;
+}
+.anime_titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.anime_title {
+  font: 600 clamp(20px, 3vw, 30px) / 37px Montserrat;
+  border-bottom: 2px solid #1da1f2;
+  padding-bottom: 4px;
+}
+.anime_link {
+  font: 600 clamp(15px, 2vw, 24px) Montserrat;
+}
+.anime_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 52px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.anime_card {
+  max-width: 257px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.anime_card:hover .anime_hover {
+  height: 55%;
+}
+
+.anime_hover {
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 8px 8px;
+  background: linear-gradient(90deg, rgb(16, 16, 16), rgba(0, 0, 0, 0.9) 100%);
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  padding: 15px 13px;
+  transition: 0.5s;
+}
+.anime_hover-title {
+  font: 600 clamp(18px, 2vw, 22px) / 30px Montserrat;
+  span {
+    background: linear-gradient(180deg, #dc781c, #c93677) text;
+    color: transparent;
+  }
+}
+.mt {
+  margin-top: 100px;
+}
+.anime_hover-text {
+  font: 400 clamp(13px, 2vw, 16px) Montserrat;
+}
+.section_bg {
+  background: url(../images/Group\ 16.png) no-repeat center / cover;
+}
+/*  */
+/*  */
+/*  */
+.trailer,
+.upcoming {
+  padding: 60px 0 106px;
+  position: relative;
+}
+
+.trailer::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    rgb(20, 53, 98),
+    rgba(220, 28, 132, 0.94)
+  );
+}
+.trailer_left {
+  position: relative;
+  height: max-content;
+}
+.video {
+  max-width: 1110px;
+  width: 100%;
+  height: 533px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.video_bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    91.65deg,
+    rgba(0, 0, 0, 0.44) -38.718%,
+    rgba(0, 0, 0, 0.33) 99.689%
+  );
+  pointer-events: none;
+}
+
+.traler_content {
+  display: flex;
+  gap: 50px;
+}
+.trailer_description {
+  max-width: 575px;
+
+  h2 {
+    font: 700 clamp(24px, 4vw, 55px) / 67px Montserrat;
+  }
+  span {
+    font: 700 clamp(16px, 3vw, 30px) / 37px Montserrat;
+    margin: 9px 0 43px;
+  }
+  p {
+    font: 600 clamp(13px, 2vw, 18px) / 156.4% Montserrat;
+    margin-bottom: 70px;
+  }
+}
+/* upcoming */
+.upcoming::before,
+.upcoming::after {
+  content: "";
+  left: 0;
+  right: 0;
+  height: 3px;
+  position: absolute;
+}
+.upcoming::before {
+  top: -1.5px;
+  background: linear-gradient(to right, #9747ff, #f22323);
+}
+.upcoming::after {
+  bottom: -1.5px;
+  background: linear-gradient(to right, #dc781c, #c93677);
+}
+.upcoming_cards {
+  display: flex;
+  align-items: center;
+  margin-top: 46px;
+  gap: 65px;
+}
+.upcoming_card {
+  max-width: 420px;
+  width: 100%;
+  h3 {
+    font: 700 clamp(24px, 3vw, 40px) / 49px Montserrat;
+  }
+  p {
+    font: 600 clamp(13px, 2vw, 18px) / 22px Montserrat;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 36px 0;
+
+    a {
+      padding: 10px 15px;
+      border-radius: 25px;
+
+      background: linear-gradient(180deg, rgb(220, 120, 28), rgb(201, 54, 119)) text; 
+      color: transparent;
+      font: 600 clamp(16px, 2vw, 18px) / 22px Montserrat;
+      border: 2px solid #143562;
+    }
+  }
+}
+.footer{
+  background: url(../images/f_bg.png) no-repeat center / cover;
+  padding: 125px 0 95px;
+}
+.footer_cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer_title{
+  font: 700 clamp(16px, 2vw, 25px) / 182.9% Montserrat;
+}
+.footer_link{
+  font: 600 clamp(16px, 2vw, 20px) / 182.9% Montserrat;
+}
+.footer_list li{
+list-style: disc;
+}
+.instagram::before {
+   content: "\f16d";
+}
+.twitter::before {
+  content: "\f099";
+}
+.instagram, 
+.twitter {
+ font-style: normal;
+ font-size: 30px;
+ color: #1DA1F2;
+}
+.footer_social{
+  display: flex;
+  gap: 25px;
+  margin-top: 50px;
+}
+.instagram{
+  color: transparent;
+  background: linear-gradient(#9747FF, #CF427B, #BD5D05, #BD5D05) text;
+}
